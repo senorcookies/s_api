@@ -1,8 +1,4 @@
-// Main 
-
-// require('dotenv').config();
-// console.log(process.env.API_KEY);
-
+// PG.2 Main 
 
 import { kreAuthorize } from './kapi.js';
 kreAuthorize();

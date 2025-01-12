@@ -1,5 +1,5 @@
 
-import Chart from 'chart.js/auto'
+// import Chart from 'chart.js/auto'
 require('dotenv').config();
 
 // Function uses provided refresh token to get a new access token, then passes that to the getActivity function.
