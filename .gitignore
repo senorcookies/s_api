@@ -1,9 +1,10 @@
 # ignore ALL .log files
 *.log
 
-# ignore ALL files in ANY directory named temp
+# ignore ALL files in ANY directory 
 .parcel-cache
-dist
+.cache
 .env
+dist
 node_modules
 Oauth_Process.js
