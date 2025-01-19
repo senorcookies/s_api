@@ -3,7 +3,7 @@
 require('dotenv').config();
 
 // Function uses provided refresh token to get a new access token, then passes that to the getActivity function.
-export function kreAuthorize() {
+export function treAuthorize() {
     const auth_link = "https://www.strava.com/oauth/token";
 
     fetch(auth_link,{
@@ -16,7 +16,7 @@ export function kreAuthorize() {
         body: JSON.stringify({
             client_id: `${ process.env.CLIENT_ID }`,
             client_secret: `${ process.env.CLIENT_SECRETE }`,
-            refresh_token: `${ process.env.KELBY_REFRESH_TOKEN }`,
+            refresh_token: `${ process.env.THERESA_REFRESH_TOKEN }`,
             grant_type: 'refresh_token'
         })
     }).then(res => res.json())
@@ -46,7 +46,7 @@ function dPlot(res) {
     };
     // 1) Output data to HTML by ID:
     const DispData = `${ Math.ceil(totalElevation * metersTofeet) }`;
-    document.getElementById("kelevdata").innerHTML = `Kelby's Total Elevation YTD: ${ DispData } ft`;
+    document.getElementById("televdata").innerHTML = `Theresa's Total Elevation YTD: ${ DispData } ft`;
 
     // 2) Creat Chart:
     const sumByMonth = (Data) => {
@@ -66,7 +66,7 @@ function dPlot(res) {
     };
 
     const monthlyTotals = sumByMonth(Data);
-    saveData("kelby_data", monthlyTotals)
+    saveData("theresa_data", monthlyTotals)
     // const labels = Object.keys(monthlyTotals); // Months (e.g., "2025-01", "2025-02")
     // const values = Object.values(monthlyTotals); // Totals for each month
 

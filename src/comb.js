@@ -12,6 +12,8 @@ export function teamPlot() {
   const zach_data = loadData("zach_data");
   const smack_data = loadData("smack_data");
   const caren_data = loadData("Caren_data");
+  const alex_data = loadData("alex_data");
+  const theresa_data = loadData("theresa_data");
 
 
   const labels = Object.keys(kelby_data); // Months (e.g., "2025-01", "2025-02")
@@ -20,10 +22,12 @@ export function teamPlot() {
   const zach_values = Object.values(zach_data);
   const smack_values = Object.values(smack_data);
   const caren_values = Object.values(caren_data);
+  const alex_values = Object.values(alex_data);
+  const theresa_values = Object.values(theresa_data);
 
   const zelby_data = kelby_values.map((num, index) => num + zach_values[index]);
-  const smatesa_data = kate_values.map((num, index) => num + smack_values[index] + kate_values[index]);
-  const calex_data = caren_values.map((num, index) => num + kate_values[index]);
+  const smatesa_data = kate_values.map((num, index) => num + smack_values[index] + theresa_values[index]);
+  const calex_data = caren_values.map((num, index) => num + alex_values[index]);
 
   new Chart(
     document.getElementById('tChart'), {
@@ -59,6 +63,8 @@ export function indPlot() {
   const zach_data = loadData("zach_data");
   const smack_data = loadData("smack_data");
   const caren_data = loadData("Caren_data");
+  const alex_data = loadData("alex_data");
+  const theresa_data = loadData("theresa_data");
 
 
   const labels = Object.keys(kelby_data); // Months (e.g., "2025-01", "2025-02")
@@ -67,6 +73,8 @@ export function indPlot() {
   const zach_values = Object.values(zach_data);
   const smack_values = Object.values(smack_data);
   const caren_values = Object.values(caren_data);
+  const alex_values = Object.values(alex_data);
+  const theresa_values = Object.values(theresa_data);
 
 
   new Chart(
@@ -99,7 +107,17 @@ export function indPlot() {
                   label: 'Caren',
                   data: caren_values, // Y-axis data
                   backgroundColor: 'rgba(31, 143, 0, 0.4)'               
-                  }]
+                  },
+                  {
+                    label: 'Alex',
+                    data: alex_values, // Y-axis data
+                    backgroundColor: 'rgba(208, 187, 0, 0.4)'               
+                    },
+                    {
+                      label: 'Theresa',
+                      data: theresa_values, // Y-axis data
+                      backgroundColor: 'rgba(187, 0, 208, 0.4)'               
+                      }]
         }
     }
   );
