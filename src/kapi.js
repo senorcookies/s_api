@@ -43,11 +43,7 @@ function dPlot(res) {
     var totalElevation = 0;
     for (i = 0; i < Data.length; i++) {
         totalElevation += Data[i].total_elevation_gain;
-    }
-
-    // 1) Output data to HTML by ID:
-    const DispData = `${ Math.ceil(totalElevation * metersTofeet) }`;
-    document.getElementById("kelevdata").innerHTML = `Kelby's Total Elevation YTD: ${ DispData } ft`;
+    };
 
 
     // 2) Creat Chart:
@@ -60,7 +56,12 @@ function dPlot(res) {
           acc[key] = (acc[key] || 0) + (total_elevation_gain * metersTofeet);
           return acc;
         }, {});
-      };
+    };
+
+    // 1) Output data to HTML by ID:
+    const DispData = `${ Math.ceil(totalElevation * metersTofeet) }`;
+    document.getElementById("kelevdata").innerHTML = `Kelby's Total Elevation YTD: ${ DispData } ft`;
+
 
     // Save data to a JSON file
     function saveData(key, data) {
