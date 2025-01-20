@@ -16,7 +16,7 @@ export function teamPlot() {
   const theresa_data = loadData("theresa_data");
 
 
-  const labels = Object.keys(kelby_data); // Months (e.g., "2025-01", "2025-02")
+  // const labels = Object.keys(kelby_data || {}); // Months (e.g., "2025-01", "2025-02")
   const kelby_values = Object.values(kelby_data || {}); 
   const kate_values = Object.values(kate_data || {}); 
   const zach_values = Object.values(zach_data || {});
@@ -75,7 +75,7 @@ export function indPlot() {
   const theresa_data = loadData("theresa_data");
 
 
-  const labels = Object.keys(kelby_data || {}); // Months (e.g., "2025-01", "2025-02")
+  // const labels = Object.keys(kelby_data || {}); // Months (e.g., "2025-01", "2025-02")
   const kelby_values = Object.values(kelby_data || {});
   const kate_values = Object.values(kate_data || {}); 
   const zach_values = Object.values(zach_data || {});
