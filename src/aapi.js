@@ -11,7 +11,6 @@ export function areAuthorize() {
         headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json'
-
         },
         body: JSON.stringify({
             client_id: `${ process.env.CLIENT_ID }`,
@@ -39,15 +38,6 @@ function dPlot(res) {
     const metersTofeet = 3.28084;
     const Data = res;
 
-    // Review, this can probably be combined with chart calcs below.
-    var totalElevation = 0;
-    for (i = 0; i < Data.length; i++) {
-        totalElevation += Data[i].total_elevation_gain;
-    };
-    // 1) Output data to HTML by ID:
-    const DispData = `${ Math.ceil(totalElevation * metersTofeet) }`;
-    document.getElementById("aelevdata").innerHTML = `Alex's Total Elevation YTD: ${ DispData } ft`;
-
     // 2) Creat Chart:
     const sumByMonth = (Data) => {
         return Data.reduce((acc, { start_date, total_elevation_gain }) => {
@@ -67,23 +57,4 @@ function dPlot(res) {
 
     const monthlyTotals = sumByMonth(Data);
     saveData("alex_data", monthlyTotals)
-    // const labels = Object.keys(monthlyTotals); // Months (e.g., "2025-01", "2025-02")
-    // const values = Object.values(monthlyTotals); // Totals for each month
-
-    // new Chart(
-    //     document.getElementById('kChart'),
-    //     {
-    //       type: 'line',
-    //       data: {
-    //         labels: labels, // X-axis labels
-    //         datasets: [{
-    //           label: 'Monthly Elevation Total',
-    //           data: values, // Y-axis data
-    //           backgroundColor: 'rgba(255, 0, 0, 0.4)',
-    //           borderColor: 'rgba(255, 0, 0, 1.0)',
-    //           borderWidth: 1.5
-    //         }]
-    //       }
-    //     }
-    //   );
 };
