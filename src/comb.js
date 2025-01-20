@@ -17,13 +17,13 @@ export function teamPlot() {
 
 
   const labels = Object.keys(kelby_data); // Months (e.g., "2025-01", "2025-02")
-  const kelby_values = Object.values(kelby_data); 
-  const kate_values = Object.values(kate_data); 
-  const zach_values = Object.values(zach_data);
-  const smack_values = Object.values(smack_data);
-  const caren_values = Object.values(caren_data);
-  const alex_values = Object.values(alex_data);
-  const theresa_values = Object.values(theresa_data);
+  const kelby_values = Object.values(kelby_data || {}); 
+  const kate_values = Object.values(kate_data || {}); 
+  const zach_values = Object.values(zach_data || {});
+  const smack_values = Object.values(smack_data || {});
+  const caren_values = Object.values(caren_data || {});
+  const alex_values = Object.values(alex_data || {});
+  const theresa_values = Object.values(theresa_data || {});
 
   const zelby_data = kelby_values.map((num, index) => num + zach_values[index]);
   const zelby_total = zelby_data.reduce((acc, curr) => acc + curr, 0);
@@ -75,14 +75,14 @@ export function indPlot() {
   const theresa_data = loadData("theresa_data");
 
 
-  const labels = Object.keys(kelby_data); // Months (e.g., "2025-01", "2025-02")
-  const kelby_values = Object.values(kelby_data);
-  const kate_values = Object.values(kate_data); 
-  const zach_values = Object.values(zach_data);
-  const smack_values = Object.values(smack_data);
-  const caren_values = Object.values(caren_data);
-  const alex_values = Object.values(alex_data);
-  const theresa_values = Object.values(theresa_data);
+  const labels = Object.keys(kelby_data || {}); // Months (e.g., "2025-01", "2025-02")
+  const kelby_values = Object.values(kelby_data || {});
+  const kate_values = Object.values(kate_data || {}); 
+  const zach_values = Object.values(zach_data || {});
+  const smack_values = Object.values(smack_data || {});
+  const caren_values = Object.values(caren_data || {});
+  const alex_values = Object.values(alex_data || {});
+  const theresa_values = Object.values(theresa_data || {});
 
   const kelby_total = kelby_values.reduce((acc, curr) => acc + curr, 0);
   const kate_total = kate_values.reduce((acc, curr) => acc + curr, 0);
