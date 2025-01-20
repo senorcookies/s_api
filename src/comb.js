@@ -1,4 +1,4 @@
-// import Chart from 'chart.js/auto';
+import Chart from 'chart.js/auto';
 
 function loadData(key) {
   const data = localStorage.getItem(key);
@@ -16,7 +16,7 @@ export function teamPlot() {
   const theresa_data = loadData("theresa_data");
 
 
-  // const labels = Object.keys(kelby_data || {}); // Months (e.g., "2025-01", "2025-02")
+  const labels = Object.keys(kelby_data || {}); // Months (e.g., "2025-01", "2025-02")
   const kelby_values = Object.values(kelby_data || {}); 
   const kate_values = Object.values(kate_data || {}); 
   const zach_values = Object.values(zach_data || {});
@@ -37,30 +37,30 @@ export function teamPlot() {
   document.getElementById("calexdata").innerHTML = `Calex's Total Elevation YTD: ${ Math.ceil(calex_total) } ft`;
 
 
-  // new Chart(
-  //   document.getElementById('tChart'), {
-  //     type: 'bar',
-  //     data: {
-  //       labels: labels, // X-axis labels
-  //       datasets: [
-  //         {
-  //         label: 'Zelby',
-  //         data: zelby_data, // Y-axis data
-  //         backgroundColor: 'rgba(255, 0, 0, 0.4)'
-  //         },
-  //           {
-  //           label: 'Smatesa',
-  //           data: smatesa_data, // Y-axis data
-  //           backgroundColor: 'rgba(18, 1, 208, 0.4)'              
-  //           },
-  //             {
-  //             label: 'Calex',
-  //             data: calex_data, // Y-axis data
-  //             backgroundColor: 'rgba(70, 255, 53, 0.4)'            
-  //             }]
-  //       }
-  //   }
-  // );
+  new Chart(
+    document.getElementById('tChart'), {
+      type: 'bar',
+      data: {
+        labels: labels, // X-axis labels
+        datasets: [
+          {
+          label: 'Zelby',
+          data: zelby_data, // Y-axis data
+          backgroundColor: 'rgba(255, 0, 0, 0.4)'
+          },
+            {
+            label: 'Smatesa',
+            data: smatesa_data, // Y-axis data
+            backgroundColor: 'rgba(18, 1, 208, 0.4)'              
+            },
+              {
+              label: 'Calex',
+              data: calex_data, // Y-axis data
+              backgroundColor: 'rgba(70, 255, 53, 0.4)'            
+              }]
+        }
+    }
+  );
 };
 
 
@@ -75,7 +75,7 @@ export function indPlot() {
   const theresa_data = loadData("theresa_data");
 
 
-  // const labels = Object.keys(kelby_data || {}); // Months (e.g., "2025-01", "2025-02")
+  const labels = Object.keys(kelby_data || {}); // Months (e.g., "2025-01", "2025-02")
   const kelby_values = Object.values(kelby_data || {});
   const kate_values = Object.values(kate_data || {}); 
   const zach_values = Object.values(zach_data || {});
@@ -101,50 +101,50 @@ export function indPlot() {
   document.getElementById("tdata").innerHTML = `Theresa's Total Elevation YTD: ${ Math.ceil(theresa_total) } ft`;
 
 
-  // new Chart(
-  //   document.getElementById('indChart'), {
-  //     type: 'bar',
-  //     data: {
-  //       labels: labels, // X-axis labels
-  //       datasets: [
-  //         {
-  //           label: 'Kelby',
-  //           data: kelby_values, // Y-axis data
-  //           backgroundColor: 'rgba(255, 0, 0, 0.4)'
-  //         },
-  //           {
-  //           label: 'Kate',
-  //           data: kate_values, // Y-axis data
-  //           backgroundColor: 'rgba(18, 1, 208, 0.4)'             
-  //           },
-  //             {
-  //             label: 'Zach',
-  //             data: zach_values, // Y-axis data
-  //             backgroundColor: 'rgba(255, 238, 0, 0.4)'             
-  //             },
-  //               {
-  //               label: 'Smack',
-  //               data: smack_values, // Y-axis data
-  //               backgroundColor: 'rgba(255, 0, 247, 0.4)'             
-  //               },
-  //                 {
-  //                 label: 'Caren',
-  //                 data: caren_values, // Y-axis data
-  //                 backgroundColor: 'rgba(31, 143, 0, 0.4)'               
-  //                 },
-  //                 {
-  //                   label: 'Alex',
-  //                   data: alex_values, // Y-axis data
-  //                   backgroundColor: 'rgba(208, 187, 0, 0.4)'               
-  //                   },
-  //                   {
-  //                     label: 'Theresa',
-  //                     data: theresa_values, // Y-axis data
-  //                     backgroundColor: 'rgba(187, 0, 208, 0.4)'               
-  //                     }]
-  //       }
-  //   }
-  // );
+  new Chart(
+    document.getElementById('indChart'), {
+      type: 'bar',
+      data: {
+        labels: labels, // X-axis labels
+        datasets: [
+          {
+            label: 'Kelby',
+            data: kelby_values, // Y-axis data
+            backgroundColor: 'rgba(255, 0, 0, 0.4)'
+          },
+            {
+            label: 'Kate',
+            data: kate_values, // Y-axis data
+            backgroundColor: 'rgba(18, 1, 208, 0.4)'             
+            },
+              {
+              label: 'Zach',
+              data: zach_values, // Y-axis data
+              backgroundColor: 'rgba(255, 238, 0, 0.4)'             
+              },
+                {
+                label: 'Smack',
+                data: smack_values, // Y-axis data
+                backgroundColor: 'rgba(255, 0, 247, 0.4)'             
+                },
+                  {
+                  label: 'Caren',
+                  data: caren_values, // Y-axis data
+                  backgroundColor: 'rgba(31, 143, 0, 0.4)'               
+                  },
+                  {
+                    label: 'Alex',
+                    data: alex_values, // Y-axis data
+                    backgroundColor: 'rgba(208, 187, 0, 0.4)'               
+                    },
+                    {
+                      label: 'Theresa',
+                      data: theresa_values, // Y-axis data
+                      backgroundColor: 'rgba(187, 0, 208, 0.4)'               
+                      }]
+        }
+    }
+  );
 };
 
 
